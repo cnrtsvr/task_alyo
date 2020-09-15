@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frame Player</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+  <link href="frame-player.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div id="player-container" class="player-container"></div>
+  </div>
+
+  <script src="frame-player.js"></script>
+  <script>
+    const player = new FramePlayer('player-container');
+    player.on('play', (ms) => {
+      console.log(`Video started playing at ms: ${ms}`)
+    });
+    player.on('pause', (ms) => {
+      console.log(`Video paused at ms: ${ms}`)
+    });
+    player.on('end', () => {
+      console.log(`Video ended`);
+    });
+  </script>
+
+</body>
+</html>

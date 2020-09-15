@@ -1,0 +1,131 @@
+@keyframes fade {
+    0% {opacity: 1}
+    25% {opacity: 0.5}
+    50% {opacity: 0}
+    75% {opacity: 0.5}
+    100% {opacity: 1}
+}
+
+.fade {
+    animation: fade 1s;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: #204051 !important;
+
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+      }
+}
+
+body {
+    margin: 0 !important;
+}
+
+.page-wrapper {
+    padding: 24px;
+    display: flex;
+}
+
+.page-wrapper .player-container {
+    width: 640px;
+    height: 360px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    border-radius: 4px;
+}
+
+.page-wrapper .player-container .image-container {
+    position: relative;
+    width: 640px;
+    height: 360px;
+    cursor: pointer;
+}
+
+.page-wrapper .player-container .image-container img {
+    position: relative;
+    width: calc(640px * 5);
+    height: calc(360px * 5);
+}
+
+.page-wrapper .player-container .progress-bar-background {
+    cursor: pointer;
+    position: absolute;
+    background: #e4e3e3;
+    opacity: 1;
+    width: 582px;
+    height: 15px;
+    top: calc(calc(360px - 15px) - 5px);
+    left: calc(calc(calc(100% - 630px) / 2) + 48px);
+    z-index: 2;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.page-wrapper .player-container .play-pause-progress {
+    cursor: pointer;
+    position: absolute;
+    color: #e4e3e3;
+    font-size: 24px;
+    top: calc(calc(360px - 20px) - 5px);
+    left: calc(calc(calc(100% - 630px) / 2) + 10px);
+    z-index: 2;
+    transition: 0.4s;
+}
+
+.page-wrapper .player-container .progress-bar-background .progress-bar {
+    position: absolute;
+    background: #84a9ac;
+    opacity: 1;
+    width: 0;
+    height: 15px;
+    z-index: 3;
+    border-radius: 4px 0 0 4px;
+}
+
+.page-wrapper .player-container .play-pause-overlay {
+    position: absolute;
+    font-size: 64px;
+    cursor: pointer;
+    top: calc(calc(360px - 64px) / 2);
+    left: calc(calc(100% - 64px) / 2);
+    z-index: 4;
+    visibility: hidden;
+    color: #e4e3e3;
+}
+
+.page-wrapper .player-container .loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 360px;
+    z-index: 5;
+    background: rgba(32,64,81, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
