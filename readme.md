@@ -1,7 +1,7 @@
-#Description
+# Description
 A Frame Player to play the images that contain frames(25 Frames per image) with 10 FPS.
 
-#Setup
+# Setup
 
 If you don't have http-server, you must run
 `npm install http-server` before running `./serve.sh`
